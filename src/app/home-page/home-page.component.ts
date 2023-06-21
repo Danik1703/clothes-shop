@@ -19,7 +19,9 @@ export class HomePageComponent implements OnInit {
   cartIsEmpty = true;
 
   ngOnInit() {
-    this.startSlider();
+    this.loadCartItems();
+    this.updateCartDisplay();
+    this.checkCartIsEmpty();
   }
 
   startSlider() {
@@ -42,6 +44,7 @@ export class HomePageComponent implements OnInit {
   }
 
   addToCart(event: Event) {
+    event.preventDefault(); 
     const productCard = (event.target as HTMLElement).closest('.product-card');
     const productName = productCard?.querySelector('h3')?.textContent;
     const productPriceString = productCard?.querySelector('p')?.textContent?.replace('$', '');
@@ -66,9 +69,11 @@ export class HomePageComponent implements OnInit {
 
       const quantityElement = productCard?.querySelector('.quantity');
       if (quantityElement) {
-        const quantity = parseInt(quantityElement.textContent || '0');
+        const quantity = parseInt(quantityElement.textContent || '0', 10);
         quantityElement.textContent = (quantity + 1).toString();
       }
+
+      this.saveCartItems(); 
     }
   }
 
@@ -81,6 +86,8 @@ export class HomePageComponent implements OnInit {
 
       this.updateCartDisplay();
       this.checkCartIsEmpty();
+
+      this.saveCartItems(); 
     }
   }
 
@@ -95,10 +102,12 @@ export class HomePageComponent implements OnInit {
 
         const quantityElement = productCard?.querySelector('.quantity');
         if (quantityElement) {
-          const quantity = parseInt(quantityElement.textContent || '0');
+          const quantity = parseInt(quantityElement.textContent || '0', 10);
           quantityElement.textContent = (quantity + 1).toString();
         }
       }
+
+      this.saveCartItems(); 
     }
   }
 
@@ -113,12 +122,14 @@ export class HomePageComponent implements OnInit {
 
         const quantityElement = productCard?.querySelector('.quantity');
         if (quantityElement) {
-          const quantity = parseInt(quantityElement.textContent || '0');
+          const quantity = parseInt(quantityElement.textContent || '0', 10);
           if (quantity > 0) {
             quantityElement.textContent = (quantity - 1).toString();
           }
         }
       }
+
+      this.saveCartItems(); 
     }
   }
 
@@ -154,7 +165,7 @@ export class HomePageComponent implements OnInit {
         const removeButton = document.createElement('button');
         removeButton.classList.add('remove-from-cart-btn');
         removeButton.textContent = 'Remove';
-        removeButton.addEventListener('click', () => this.removeFromCart(event, item.name));
+        removeButton.addEventListener('click', (event) => this.removeFromCart(event, item.name));
         itemDetails.appendChild(removeButton);
 
         cartItem.appendChild(itemDetails);
@@ -183,5 +194,16 @@ export class HomePageComponent implements OnInit {
 
   topFunction() {
     document.documentElement.scrollTop = 0;
+  }
+
+  saveCartItems() {
+    localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
+  }
+
+  loadCartItems() {
+    const savedCartItems = localStorage.getItem('cartItems');
+    if (savedCartItems) {
+      this.cartItems = JSON.parse(savedCartItems);
+    }
   }
 }
