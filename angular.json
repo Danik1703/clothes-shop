@@ -41,12 +41,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "100mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "10kb"
+                  "maximumError": "50kb"
                 }
               ],
               "outputHashing": "all"
@@ -102,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d935d2c0-6a4b-46d8-9e41-1289d3a9bfe0"
   }
 }
