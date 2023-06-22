@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlatformHelper } from '@natec/mef-dev-platform-connector';
 
 interface CartItem {
   name: string;
@@ -17,7 +18,10 @@ export class HomePageComponent implements OnInit {
   timer: any;
   cartItems: CartItem[] = [];
   cartIsEmpty = true;
-
+  
+  getAsset(url:string): string{
+    return PlatformHelper.getAssetUrl() + url
+  }
   ngOnInit() {
     this.loadCartItems();
     this.updateCartDisplay();
@@ -44,7 +48,7 @@ export class HomePageComponent implements OnInit {
   }
 
   addToCart(event: Event) {
-    event.preventDefault(); 
+    event.preventDefault();
     const productCard = (event.target as HTMLElement).closest('.product-card');
     const productName = productCard?.querySelector('h3')?.textContent;
     const productPriceString = productCard?.querySelector('p')?.textContent?.replace('$', '');
@@ -73,7 +77,7 @@ export class HomePageComponent implements OnInit {
         quantityElement.textContent = (quantity + 1).toString();
       }
 
-      this.saveCartItems(); 
+      this.saveCartItems();
     }
   }
 
@@ -87,7 +91,7 @@ export class HomePageComponent implements OnInit {
       this.updateCartDisplay();
       this.checkCartIsEmpty();
 
-      this.saveCartItems(); 
+      this.saveCartItems();
     }
   }
 
@@ -107,7 +111,7 @@ export class HomePageComponent implements OnInit {
         }
       }
 
-      this.saveCartItems(); 
+      this.saveCartItems();
     }
   }
 
@@ -129,7 +133,7 @@ export class HomePageComponent implements OnInit {
         }
       }
 
-      this.saveCartItems(); 
+      this.saveCartItems();
     }
   }
 
