@@ -4,18 +4,18 @@
     box-sizing: border-box;
     font-weight: bold;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
     background-color: #f7e2e1;
   }
-  
+
   header {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
     background-color: #e0f4f5;
@@ -29,84 +29,84 @@
     z-index: 999;
     flex-direction: row;
   }
-  
+
   .logo {
     display: flex;
     justify-content: flex-start;
     align-items: center;
   }
-  
+
   .logo img {
     height: 23%;
     max-width: 23%;
     z-index: -1;
     transition: transform 0.3s ease;
   }
-  
+
   .logo img:hover {
     height: 21%;
     max-width: 21%;
     transform: scale(1.1);
     transition: transform 0.3s ease;
   }
-  
+
   nav ul {
     display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  
+
   nav li {
     margin-left: 1rem;
   }
-  
+
   nav a {
     text-decoration: none;
     color: #333;
   }
-  
+
   nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
-  
+
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
   }
-  
+
   li {
     margin-left: 1rem;
   }
-  
+
   a {
     color: #333;
     text-decoration: none;
   }
-  
+
   nav ul {
     display: flex;
   }
-  
+
   nav ul li:not(:last-child) {
     margin-right: 1rem;
   }
-  
+
   nav ul li a {
     font-family: "Your Chosen Font", sans-serif;
     display: block;
     padding: 0.5rem;
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   nav ul li a:hover {
     background-color: #fdf3f2;
   }
-  
+
   .banner {
     background-position: center;
     background-repeat: no-repeat;
@@ -122,13 +122,13 @@
     color: #fff;
     margin: 2rem auto;
   }
-  
+
   #slider {
     position: relative;
     width: 100%;
     height: 100%;
   }
-  
+
   .slide {
     position: absolute;
     top: 0;
@@ -138,17 +138,17 @@
     opacity: 0;
     transition: opacity 2s ease-in-out;
   }
-  
+
   .slide.active {
     opacity: 1;
   }
-  
+
   .slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  
+
   .dots {
     position: absolute;
     bottom: 10px;
@@ -156,7 +156,7 @@
     transform: translateX(-50%);
     z-index: 999;
   }
-  
+
   .dot {
     display: inline-block;
     width: 10px;
@@ -166,13 +166,13 @@
     background-color: #bbb;
     cursor: pointer;
   }
-  
+
   .dot.active {
     background-color: #fff;
     position: relative;
     z-index: 1;
   }
-  
+
   .featured-products {
     margin: 2rem auto;
     max-width: 1100px;
@@ -181,7 +181,7 @@
     justify-content: flex-start;
     grid-gap: 2rem;
   }
-  
+
   .add-to-cart-btn {
     display: inline-block;
     padding: 10px 20px;
@@ -193,17 +193,17 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
+
   .add-to-cart-btn:hover {
     background-color: #ebefe1;
   }
-  
+
   .quantity {
     display: inline-block;
     padding: 0 10px;
     font-size: 16px;
   }
-  
+
   .product-card {
     background-color: #e0f4f5;
     display: flex;
@@ -214,22 +214,22 @@
     position: relative;
     margin-bottom: 2rem;
   }
-  
+
   .product-card img {
     width: 100%;
     height: auto;
   }
-  
+
   .product-card h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .product-card p {
     font-size: 14px;
     margin-bottom: 10px;
   }
-  
+
   .cart-actions .add-to-cart-btn,
   .cart-actions .remove-from-cart-btn {
     display: inline-block;
@@ -240,13 +240,13 @@
     border: none;
     cursor: pointer;
   }
-  
+
   .cart-actions .add-to-cart-btn:hover,
   .cart-actions .remove-from-cart-btn:hover {
     background-color: #555;
     color: #fff;
   }
-  
+
   .modal {
     display: none;
     position: fixed;
@@ -258,7 +258,7 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
   }
-  
+
   .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -268,35 +268,35 @@
     max-width: 600px;
     text-align: center;
   }
-  
+
   .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     cursor: pointer;
   }
-  
+
   .close:hover,
   .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
   }
-  
+
   button {
     margin-top: 20px;
   }
-  
+
   .cart {
     list-style: none;
     margin-top: 10px;
   }
-  
+
   .cart-item {
     margin-bottom: 10px;
     font-weight: bold;
   }
-  
+
   .cart-icon {
     display: inline-block;
     background-image: url(src/assets/foto/korsina.png);
@@ -305,7 +305,7 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
   .cart-item img {
     width: 50px;
     height: 50px;
@@ -313,7 +313,7 @@
     margin-right: 10px;
     margin: 10px;
   }
-  
+
   .remove-button {
     display: inline-block;
     background-color: #e5e3e4;
@@ -328,7 +328,7 @@
     font-size: 0.9rem;
     font-weight: bold;
   }
-  
+
   .remove-button:hover {
     color: black;
     background-color: #e5e3e4;
@@ -341,7 +341,7 @@
   .cart-modal-open {
     overflow: hidden;
   }
-  
+
   footer {
     align-items: center;
     bottom: 0;
@@ -353,13 +353,13 @@
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
-  
+
   .social-media-icons {
     display: flex;
     justify-content: center;
     margin-top: 10px;
   }
-  
+
   .social-media-icons a {
     display: inline-flex;
     justify-content: center;
@@ -372,12 +372,12 @@
     color: #111;
     transition: all 0.3s ease-in-out;
   }
-  
+
   .social-media-icons a:hover {
     background-color: #00c3ff;
     color: #fff;
   }
-  
+
   #myBtn {
     display: none;
     position: fixed;
@@ -390,16 +390,15 @@
     cursor: pointer;
     padding: 15px;
   }
-  
+
   #myBtn img {
     width: 30px;
     height: 30px;
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
     transition: filter 0.3s ease;
   }
-  
+
   #myBtn:hover img,
   #myBtn:focus img {
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
   }
-  

@@ -6,6 +6,10 @@
     "start": "npm run generate-version-file && ng serve",
     "build": "npm run generate-version-file && ng build",
     "watch": "npm run generate-version-file && ng build --watch --configuration development",
+    "generate-version-file": "npm explore @natec/mef-dev-platform-connector -- npm run generate-version-file",
+    "build:plugin": "npm run generate-version-file && ng build --prod --output-hashing none --single-bundle",
+    "build:plugin:watch": "ng build --output-hashing none --single-bundle --watch --optimization=false --output-path C:/storage/front/Plugins/bpmn/bpmn-designer/1.1.1",
+
     "test": "ng test"
   },
   "private": true,
